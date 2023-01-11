@@ -7,13 +7,13 @@ export const fetchCoordsWeather = async (lat, lon) => {
 
 export const fetchCity = async (lat, lon) => {
     let appidGeo = "b45cec15d4c670d6e31f5e37b4e47ad9";
-    let response1 = await fetch(`http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${appidGeo}`)
+    let response1 = await fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${appidGeo}`)
     let data = await response1.json();
     return data;
 }
 
 export const searchCity = async (name) => {
-    let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=b45cec15d4c670d6e31f5e37b4e47ad9`)
+    let response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${name}&limit=1&appid=b45cec15d4c670d6e31f5e37b4e47ad9`)
     try {
         let data = await response.json();
         return data;
