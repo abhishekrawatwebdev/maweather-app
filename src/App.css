@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width:1240px) {
+  .section {
+    height: 100vh;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#loader {
+  height: 100px;
+  width: 100%;
+  animation: loader_rotate infinite 3s alternate;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes loader_rotate {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+
+}
+
+#loader_sec {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.945);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  color: white;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+}
+
+.section {
+  color: white;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.topSearchbar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem 0 4rem 0;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 5vw 0;
+}
+
+.temp-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature::after {
+  content: "°C";
+  font-size: 30px;
+
+
+}
+
+.date {
+  font-size: x-small;
+}
+
+.search {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding-right: 5px;
+  height: 2rem;
+  border-radius: 50px;
+  justify-content: center;
+  width: 57vw;
+}
+
+.search input[type=text] {
+  border: none;
+  outline: none;
+  padding-left: 30px;
+
+  height: 2rem;
+
+  background: transparent;
+  width: 40vw;
+}
+
+.submit {
+  height: 1.7rem;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  color: white;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  width: 16.5vw;
+
+}
+
+#weatherIcon {
+  width: auto;
+  height: 145px;
+  padding-left: 15vw;
+
+}
+
+#description {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.degree {
+  font-size: 20px;
+}
+
+.humiditylogo img,
+.windlogo img,
+.pressurelogo img {
+  height: 50px;
+  width: auto;
+}
+
+.humiditylogo,
+.windlogo,
+.pressurelogo {
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #35b5ff 74%);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  width: 70px;
+
+}
+
+@media screen and (max-width:450px) {
+  .temp-wrapper {
+    flex-direction: column;
+  }
+
+  #weatherIcon {
+    padding-left: 0;
+  }
+
 }
